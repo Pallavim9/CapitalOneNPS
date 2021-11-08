@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NPS Project Home</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <style>
+      img:hover {
+        opacity: 0.75;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .left {
+        top: 50%;
+        left: 15%;
+        position: absolute;
+        color:#e3f2fd;
+        z-index: 100;
+        font-size: 30px;
+      }
+      .right {
+        top: 50%;
+        right: 15%;
+        position: absolute;
+        color:#e3f2fd;
+        z-index: 100;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body style="overflow: hidden;">                  
+    <div class="whiteBGIMG" id="page-container">   
+      <div id="content-wrap"> 
+          <nav class="navbar navbar-expand-md navbar-light border" style="background-color: #e3f2fd;">
+              <a class="navbar-brand ml-3" a style="font-weight:bold" href="/">National Park Service</a>
+              <div class="collapse navbar-collapse" id="navbar">
+                  <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+
+                      <a href=/ title="Home" class="btn btn-info shadow" style="position: relative; width: 10%; height: 10%; margin-bottom: 1%;">
+                          Home
+                      </a>
+                      <a href=/activity-search title="Park Activities" class="btn btn-info shadow" style="position: relative; width: 25%; height: 10%;">
+                          Park Activities
+                      </a>
+                      <a href=/webcam-info title="Park Webcams" class="btn btn-info shadow" style="position: relative; width: 25%; height: 10%;">
+                          Park Webcams
+                      </a>
+                      <a href=/park-alerts title="Park Alerts" class="btn btn-info shadow" style="position: relative; width: 20%; height: 10%;">
+                          Park Alerts
+                      </a>
+                      <a href=/park-amenities title="Park Amenities" class="btn btn-info shadow" style="position: relative; width: 25%; height: 10%;">
+                          Park Amenities
+                      </a>
+
+              </div>
+          </nav>
+      </div>
+      {% block content %}
+      <div id="mainDiv" class="hover-overlay">
+          <a href="/activity-search">
+              <img src="https://www.nps.gov/common/uploads/structured_data/3C826312-1DD8-B71B-0B699076B0C70998.jpg" style="width: 50%; height: 92vh; float:left;">
+              <div class="left">Explore Activities</div>
+          </a>
+          <a href="/webcam-info">
+              <img src="https://d39ghehfp8sbx4.cloudfront.net/media/img/1/d74f37de-ecee-475c-bb82-bc109e806ec6-1024.jpg" style="width: 50%; height: 92vh; float:right;">
+              <div class="right">Webcam Images</div>
+          </a>
+          <a href="/park-alerts">
+              <img src="https://d39ghehfp8sbx4.cloudfront.net/media/img/1/d74f37de-ecee-475c-bb82-bc109e806ec6-1024.jpg" style="width: 50%; height: 92vh; float:right;">
+          </a>
+          <a href="/park-amenities">
+              <img src="https://d39ghehfp8sbx4.cloudfront.net/media/img/1/d74f37de-ecee-475c-bb82-bc109e806ec6-1024.jpg" style="width: 50%; height: 92vh; float:right;">
+          </a>
+          {% endblock %}
+      </div>
+  </body>
+</html>

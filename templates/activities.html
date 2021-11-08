@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Park Activity Details</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+<body>
+    {% block content %}
+    <div style="position: relative; width: 100%;">
+        <div style="position: absolute; width: 50%; height: 100vh; left: 0px; background-size: cover; background-repeat: no-repeat; background-image: url(https://www.nps.gov/common/uploads/cropped_image/45C71608-D013-688F-7914D26F6225F7C2.jpg);">
+            <form action="/activity-search" method="post" class="card p-3 bg-light" style="width: 60%; margin: 0 auto; margin-top: 5%">  
+                <h3 class="search-title" style="text-align:center;">Search for parks by a specific activity</h3>
+                <div class="input-group">
+                    <select id="e3" class="form-control" name="activity">
+                        {% if selected_activity: %}
+                            <option value={{selected_activity_code}}>{{selected_activity}}</option>
+                        {% endif %}
+                        {% for id, activity in activities.items(): %}
+                            <option value={{id}}>{{activity}}</option>
+                        {% endfor %}
+                    </select>
+                </div>    
+                <button type="submit" class="search-button btn btn-secondary btn-lg" style="width: 50%; margin-top: 2%; margin-left: auto; margin-right: auto;">Search</button>
+            </form>
+        </div>
+    
+        <div class="overflow-auto" style="position:absolute;right:0px; width:47%;height:90vh;">
+            {% if selected_activity %}
+                {% if parks: %}
+                    {% for park, url in parks.items(): %}
+                    <a href={{url}} target="_blank" title="Click to see more" class="btn btn-info shadow" style="position: relative; width: 90%; left: 5%; margin-top: 4%;">{{park}}</a>
+                    {% endfor %}
+                {% else %}
+                    No parks exist for selected activity
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>
