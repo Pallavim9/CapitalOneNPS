@@ -23,7 +23,6 @@ def get_activities():
 				for activity in activities["data"]:
 					result[activity["id"]] = activity["name"]
 
-			#print(result)
 			return result
 		except:
 			return None

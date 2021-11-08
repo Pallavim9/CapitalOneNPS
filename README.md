@@ -14,7 +14,7 @@ Capital One Summit Project Requirements:
 
 Tools used:
 
-	Python3
+	Python 3
 	National Park Service API
 	Flask
 	Bootstrap
