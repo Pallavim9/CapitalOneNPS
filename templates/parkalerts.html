@@ -33,10 +33,12 @@
             {% if selected_park %}
                 {% if alerts: %}
                     {% for title, url in alerts.items(): %}
-                        <a href={{url}} target="_blank" title="Click to see more" class="btn btn-info shadow" style="position: relative; width: 90%; left: 5%; margin-top: 4%;">
-                            {{title}}
-                            <img style="height: 5%; width:5%;" />
-                        </a>
+                        {% if url: %}
+                            <a href={{url}} target="_blank" title="Click to see more" class="btn btn-info shadow" style="position: relative; width: 90%; left: 5%; margin-top: 4%;">
+                                {{title}}
+                                <img style="height: 5%; width:5%;" />
+                            </a>
+                        {% endif %}
                     {% endfor %}
                 {% else %}
                     No alerts exist for the selected park
