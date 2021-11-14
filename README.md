@@ -40,6 +40,7 @@ NPS Search main page: Contains links to search NPS for Park Activities and Park 
 
 * **Search for parks by a specific activity**: Provides a list of Park Activities. Selecting an activity and clicking the Submit button will display a list of all parks that match/provide the selected activity. Clicking on a park will open the park information website in a new tab.
 * **Search for WebCams by a specific park**: Provides a list of parks that have web cam images available. Selecting a park and clicking the Submit button will display all the web cam images available for that park. Clicking on an image will open the image in a new tab.
+	* The API call to retrieve all parks returns results that do not have webcam images. To avoid listing parks that do not have images, I have called the API to retrieve just the parks that have webcam functionality.
 	
 	
 ### Additional Features implemented
